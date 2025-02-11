@@ -1,0 +1,14 @@
+<% layout('layouts/boilerplate') -%>
+
+
+<div>
+    <% students.forEach(s => { %>
+        <div>
+            <div><%= s.id %></div>
+            <div><%= s.name %></div>
+            <div><%= s.city %></div>
+            <div><%= s.phone_number %></div>
+            <div>=====================================================</div>
+        </div>
+    <% }); %>
+</div>

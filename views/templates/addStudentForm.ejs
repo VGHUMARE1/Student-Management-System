@@ -1,0 +1,43 @@
+<% layout('layouts/boilerplate') -%>
+
+<div>
+    
+
+    <form action="/add-student" method="post">
+        <div>
+            <label for="id">
+                Id :
+            </label>
+            <input type="text" name="id" id="name">
+
+        </div>
+        <div>
+            <label for="name">
+                Name :
+            </label>
+            <input type="text" name="name" id="name">
+
+        </div>
+        <div>
+            <label for="city">
+                City :
+            </label>
+            <input type="text" name="city" id="city">
+
+        </div>
+        <div>
+            <label for="phone_number">
+                Phone Number :
+            </label>
+            <input type="text" name="phone_number" id="phone_number">
+
+        </div>
+
+        <div>
+            <button type="submit">add Student</button>
+        </div>
+    </form>
+
+    <div id="display-student"></div>
+
+</div>

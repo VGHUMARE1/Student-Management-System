@@ -1,0 +1,22 @@
+<% layout('layouts/boilerplate') -%>
+
+<div>
+    <div><a href="/">Home</a></div>
+
+    <form action="/get-student-by-id" method="post">
+<div>
+        <label for="id">
+            Id :
+        </label>
+        <input type="text" name="id" id="name">
+
+        </div>
+
+        <div>
+            <button type="submit">Get Student</button>
+        </div>
+    </form>
+    
+    <div id="display-student"></div>
+    
+</div>
