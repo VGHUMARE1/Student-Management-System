@@ -1,43 +1,37 @@
 <% layout('layouts/boilerplate') -%>
 
-<div>
-    
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Add Student</h2>
 
-    <form action="/add-student" method="post">
-        <div>
-            <label for="id">
-                Id :
-            </label>
-            <input type="text" name="id" id="name">
+    <form id="studentForm" class="shadow p-4 rounded bg-light">
+      <div class="mb-3">
+        <label for="id" class="form-label">ID:</label>
+        <input type="text" name="id" id="id" class="form-control" required>
+        <small class="error-msg" id="idError">Please enter a valid numeric ID.</small>
+      </div>
 
-        </div>
-        <div>
-            <label for="name">
-                Name :
-            </label>
-            <input type="text" name="name" id="name">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" name="name" id="name" class="form-control" required>
+        <small class="error-msg" id="nameError">Name is required.</small>
+      </div>
 
-        </div>
-        <div>
-            <label for="city">
-                City :
-            </label>
-            <input type="text" name="city" id="city">
+      <div class="mb-3">
+        <label for="city" class="form-label">City:</label>
+        <input type="text" name="city" id="city" class="form-control" required>
+        <small class="error-msg" id="cityError">City is required.</small>
+      </div>
 
-        </div>
-        <div>
-            <label for="phone_number">
-                Phone Number :
-            </label>
-            <input type="text" name="phone_number" id="phone_number">
+      <div class="mb-3">
+        <label for="phone_number" class="form-label">Phone Number:</label>
+        <input type="tel" name="phone_number" id="phone_number" class="form-control" required pattern="[0-9]{10}">
+        <small class="error-msg" id="phoneError">Please enter a valid 10-digit phone number.</small>
+      </div>
 
-        </div>
-
-        <div>
-            <button type="submit">add Student</button>
-        </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary w-100">Add Student</button>
+      </div>
     </form>
 
-    <div id="display-student"></div>
-
-</div>
+    <div id="display-student" class="mt-4"></div>
+  </div>

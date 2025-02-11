@@ -6,6 +6,7 @@ router.use(express.static(path.join(__dirname, "/public")));
 router.use(express.urlencoded({ extended: true }));
 const middleware=require("./../middlewares/authenticat");
 const studentController=require("../controllers/students")
+const {validateStudents}=require("./validateStudents")
 
 const query=require("../dbutil/queries");
 router.get("/",(req,res)=>{
@@ -29,7 +30,7 @@ router.get("/add-student",middleware.isLoggedIn,studentController.renderStudentF
 
 
 
-router.post("/add-student",middleware.isLoggedIn,studentController.addStudent)
+router.post("/add-student",middleware.isLoggedIn,validateStudents,studentController.addStudent)
 
 
 router.get("/show-students",middleware.isLoggedIn,studentController.showStudents)

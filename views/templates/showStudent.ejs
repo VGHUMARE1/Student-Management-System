@@ -1,14 +1,21 @@
 <% layout('layouts/boilerplate') -%>
 
 
-<div>
-    <% students.forEach(s => { %>
-        <div>
-            <div><%= s.id %></div>
-            <div><%= s.name %></div>
-            <div><%= s.city %></div>
-            <div><%= s.phone_number %></div>
-            <div>=====================================================</div>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Student List</h2>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <% students.forEach(s => { %>
+        <div class="col">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">ID: <%= s.id %></h5>
+              <p class="card-text"><strong>Name:</strong> <%= s.name %></p>
+              <p class="card-text"><strong>City:</strong> <%= s.city %></p>
+              <p class="card-text"><strong>Phone:</strong> <%= s.phone_number %></p>
+            </div>
+          </div>
         </div>
-    <% }); %>
-</div>
+      <% }); %>
+    </div>
+  </div>

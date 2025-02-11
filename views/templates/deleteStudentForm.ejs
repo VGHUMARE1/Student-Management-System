@@ -1,19 +1,19 @@
 <% layout('layouts/boilerplate') -%>
 
-<div>
-    <form action="/delete-student" method="post">
-    <label for="id">
-        Id :
-    </label>
-    <input type="text" name="id" id="name">
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Delete Student</h2>
 
-    </div>
+    <form id="deleteStudentForm" action="/delete-student" method="post" class="shadow p-4 rounded bg-light">
+      <div class="mb-3">
+        <label for="id" class="form-label">ID:</label>
+        <input type="text" name="id" id="id" class="form-control" required pattern="\d+" title="Please enter a valid numeric ID">
+        <small class="error-msg" id="idError">Please enter a valid numeric ID.</small>
+      </div>
 
-    <div>
-        <button type="submit">Delete Student</button>
-    </div>
-</form>
+      <div class="text-center">
+        <button type="submit" class="btn btn-danger w-100">Delete Student</button>
+      </div>
+    </form>
 
-
-
-</div>
+    <div id="display-student" class="mt-4"></div>
+  </div>

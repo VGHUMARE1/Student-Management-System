@@ -1,4 +1,5 @@
 const query=require("./../dbutil/queries");
+
 module.exports.showStudents=(req,res,next)=>{
 
    query.showStudents().then((data)=>{
@@ -17,7 +18,7 @@ module.exports.addStudent=(req,res,next)=>{
         res.redirect("/");
         }).catch((err)=>{
             req.flash('error_msg', err.message);
-          res.redirect("/");
+          res.redirect("/add-student");
         });
      
 }

@@ -1,22 +1,21 @@
 <% layout('layouts/boilerplate') -%>
 
-<div>
-    <div><a href="/">Home</a></div>
+<div class="container mt-5">
+    
 
-    <form action="/get-student-by-id" method="post">
-<div>
-        <label for="id">
-            Id :
-        </label>
-        <input type="text" name="id" id="name">
+    <h2 class="text-center mb-4">Get Student by ID</h2>
 
-        </div>
+    <form id="getStudentForm" action="/get-student-by-id" method="post" class="shadow p-4 rounded bg-light">
+      <div class="mb-3">
+        <label for="id" class="form-label">ID:</label>
+        <input type="text" name="id" id="id" class="form-control" required pattern="\d+" title="Please enter a valid numeric ID">
+        <small class="error-msg" id="idError">Please enter a valid numeric ID.</small>
+      </div>
 
-        <div>
-            <button type="submit">Get Student</button>
-        </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary w-100">Get Student</button>
+      </div>
     </form>
-    
-    <div id="display-student"></div>
-    
-</div>
+
+    <div id="display-student" class="mt-4"></div>
+  </div>
